@@ -1,49 +1,91 @@
-from airllm import AutoModel
-import json, re
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+import torch
+import json, os
+import pandas as pd
 
-model = AutoModel.from_pretrained(
-    "MBZUAI-Paris/Atlas-Chat-9B",
-    compression='4bit'
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_use_double_quant=True,
+    bnb_4bit_compute_dtype=torch.float16
 )
 
-def generate_qa(context):
-    prompt = f"""أعطيني سؤال وجواب واحد على هذا النص بالداريجة.
+model_name = "MBZUAI-Paris/Atlas-Chat-9B"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    quantization_config=bnb_config,
+)
+
+def generate_q(context):
+    prompt = f"""أنت نظام لتوليد أسئلة بالداريجة المغربية.
+
+مهمتك: اقرأ النص وولد سؤال واحد فقط بالداريجة.
+
 القواعد:
-- السؤال لازم يكون بالداريجة
-- الجواب لازم يكون مقتطف حرفي من النص
-- ما تزيدش معلومات من برا النص
-- رد فقط بـ JSON: {{"question": "...", "answer": "..."}}
+- السؤال من نوع: شكون / فين / فوقاش / شنو / شحال   (ممنوع: علاش / كيفاش)
+- السؤال واضح وبسيط
+- جملة واحدة فقط تنتهي بـ؟
 
-النص: {context}"""
+النص: {context}
 
-    tokens = model.tokenizer(
+السؤال:"""
+
+    inputs = tokenizer(
         prompt,
         return_tensors="pt",
         truncation=True,
         max_length=512
-    )
+    ).to("cuda")
 
-    output = model.generate(
-        tokens['input_ids'],
-        max_new_tokens=150,
-        temperature=0.3,
-        do_sample=True,
-    )
+    with torch.no_grad():
+        output = model.generate(
+            **inputs,
+            max_new_tokens=60,
+            do_sample=False,
+            pad_token_id=tokenizer.eos_token_id,
+        )
 
-    response = model.tokenizer.decode(output[0], skip_special_tokens=True)
-    response = response[len(prompt):]
+    # Slice cleanly after the prompt tokens
+    response = tokenizer.decode(
+        output[0][inputs["input_ids"].shape[1]:],
+        skip_special_tokens=True
+    ).strip()
 
-    try:
-        match = re.search(r'\{.*?\}', response, re.DOTALL)
-        if match:
-            result = json.loads(match.group())
-            result["valid"] = result.get("answer", "") in context
-            return result
-    except:
-        pass
+    # Keep only the first line (first question)
+    question = response.split("\n")[0].strip()
 
-    return {"raw_response": response, "valid": False}
+    return question
 
-# Test on one example
-context = "نظمت قبيلة الرگيبات البيهات لقاء تواصليا مساء الأحد الموافق لتاريخ 16 نونبر 2025 بمدينة السمارة."
-print(generate_qa(context))
+def save_question(context, question, filepath="qa.json"):
+    entry = {
+        "context": context,
+        "question": question
+    }
+    
+    # Load existing data or start fresh
+    if os.path.exists(filepath):
+        try:
+            with open(filepath, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except (json.JSONDecodeError, IOError):
+            data = []
+    else:
+        data = []
+    
+    data.append(entry)
+    
+    with open(filepath, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    
+    print(f"Question Saved ({len(data)} total entries)")
+
+# Test
+
+df = pd.read_csv("context.csv")
+
+for i in range (50):
+    context = df["context"].iloc[i]
+    question = generate_q(context)
+    if question:
+        save_question(context, question)
