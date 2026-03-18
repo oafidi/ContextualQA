@@ -10,7 +10,7 @@ bnb_config = BitsAndBytesConfig(
     bnb_4bit_compute_dtype=torch.float16
 )
 
-model_name = "MBZUAI-Paris/Atlas-Chat-9B"
+model_name = "Qwen/Qwen2-1.5B-Instruct"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
@@ -25,6 +25,7 @@ def generate_q(context):
 القواعد:
 - السؤال من نوع: شكون / فين / فوقاش / شنو / شحال   (ممنوع: علاش / كيفاش)
 - السؤال واضح وبسيط
+- الجواب خاصو يكون موجود صريح وحرفي في النص
 - جملة واحدة فقط تنتهي بـ؟
 
 النص: {context}
