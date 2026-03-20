@@ -8,7 +8,7 @@ import os
 
 START_INDEX = 1525
 END_INDEX   = 3050
-OUTPUT_JSON = "datasets/processed/qa_types_1526_3050.json "
+OUTPUT_JSON = "datasets/processed/question_types_detected_by_llm/qa_types_1526_3050.json "
 INPUT_PATH  = "datasets/processed/goud_preprocessed_V1.csv"
 THRESHOLD = 0.70
 
