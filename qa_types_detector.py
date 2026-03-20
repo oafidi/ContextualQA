@@ -6,9 +6,9 @@ from tqdm import tqdm
 import json
 import os
 
-START_INDEX = 6100
-END_INDEX   = 7625
-OUTPUT_JSON = "datasets/processed/qa_types_6101_7625.json"
+START_INDEX = 1525
+END_INDEX   = 3050
+OUTPUT_JSON = "datasets/processed/qa_types_1526_3050.json "
 INPUT_PATH  = "datasets/processed/goud_preprocessed_V1.csv"
 THRESHOLD = 0.70
 
