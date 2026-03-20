@@ -6,7 +6,7 @@
 #  toutes les minutes et relance qa_types_detector.py si besoin
 # ============================================================
 
-TARGET_FILE="datasets/processed/qa_types_3051_4575.json"
+TARGET_FILE="datasets/processed/qa_types_6101_7625.json"
 SCRIPT_NAME="qa_types_detector.py"
 LINE_THRESHOLD=10600
 CHECK_INTERVAL=60  # secondes
