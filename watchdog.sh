@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TARGET_FILE="datasets/processed/qa_types_7626_7863.json"
-SCRIPT_NAME="qa_types_detector.py"
+SCRIPT_NAME="question_types_detector.py"
 LINE_THRESHOLD=10600
 CHECK_INTERVAL=60  # seconds
 
