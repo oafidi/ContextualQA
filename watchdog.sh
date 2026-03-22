@@ -1,9 +1,9 @@
 #!/bin/bash
 
-TARGET_FILE="datasets/processed/qa_types_7626_7863.json"
-SCRIPT_NAME="question_types_detector.py"
+TARGET_FILE="datasets/processed/question_generated_by_llm/questions_1_1525.json"
+SCRIPT_NAME="local_labeling.py"
 LINE_THRESHOLD=10600
-CHECK_INTERVAL=60  # seconds
+CHECK_INTERVAL=60
 
 # ---------- colors ----------
 GREEN='\033[0;32m'
