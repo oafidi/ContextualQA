@@ -1,5 +1,4 @@
 """
-darija_scraper_final.py
 =======================
 Automated Darija (Moroccan Arabic) question generator using Google Gemini.
 

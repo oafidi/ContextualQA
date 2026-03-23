@@ -24,7 +24,7 @@ TARGET_FILE="/mnt/c/Users/omar1/Documents/Projects/genAi/gemini_scraper/datasets
 LINE_THRESHOLD=9150
 
 # How often to check the file, in seconds.
-CHECK_INTERVAL=120
+CHECK_INTERVAL=180
 
 # ---------- colors ----------
 GREEN='\033[0;32m'
