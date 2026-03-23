@@ -30,10 +30,6 @@ CROSS-PLATFORM:
     The script automatically detects the operating system (Windows, macOS, Linux)
     and applies the correct user-agent string and clipboard method for each.
 
-USAGE:
-    python darija_scraper_final.py --csv data.csv
-    python darija_scraper_final.py --csv data.csv --delay 10 --pause-every 15
-    python darija_scraper_final.py --csv data.csv --profile "C:/Users/you/AppData/Local/Google/Chrome/User Data"
 """
 
 import time
@@ -73,8 +69,8 @@ GEMINI_URL = "https://gemini.google.com/app"
 
 # Row range to process from the CSV (0-based, END_INDEX is excluded).
 # Example: START_INDEX=1525, END_INDEX=3050 processes rows 1525 to 3049.
-START_INDEX = 1525
-END_INDEX   = 3050
+START_INDEX = 1525 # 3050
+END_INDEX   = 3050 # 4575
 
 # Path to the output JSON file where (context, question) pairs are saved.
 OUTPUT_FILE = Path(f"./datasets/processed/question_generated_by_gemini_scraper/questions_{START_INDEX + 1}_{END_INDEX}.json")
