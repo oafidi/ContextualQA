@@ -45,7 +45,7 @@ kill_and_restart() {
 
     # Restart in background
     log "${GREEN} Starting: python $SCRIPT_NAME${NC}"
-    nohup python "$SCRIPT_NAME" >> logs/qa_detector.log 2>&1 &
+    nohup python "$SCRIPT_NAME" >> logs/local_question_detector.log 2>&1 &
     log "${GREEN} Process restarted with PID $!${NC}"
 }
 
