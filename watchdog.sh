@@ -1,9 +1,9 @@
 #!/bin/bash
 
 TARGET_FILE="datasets/processed/question_generated_by_llm/questions_1_1525.json"
-SCRIPT_NAME="local_labeling.py"
-LINE_THRESHOLD=10600
-CHECK_INTERVAL=60
+SCRIPT_NAME="labeling/local_question_labeling.py"
+LINE_THRESHOLD=9150
+CHECK_INTERVAL=300
 
 # ---------- colors ----------
 GREEN='\033[0;32m'

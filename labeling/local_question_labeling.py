@@ -147,7 +147,7 @@ if __name__ == "__main__":
         tasks.append(entry)
 
         # Flush every n entries
-        if len(tasks) % 1 == 0:
+        if len(tasks) % 5 == 0:
             with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
                 json.dump(tasks, f, ensure_ascii=False, indent=2)
 
