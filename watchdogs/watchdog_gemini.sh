@@ -1,23 +1,5 @@
 #!/bin/bash
 
-# =============================================================================
-# watchdog.sh
-# =============================================================================
-# Monitors a JSON file and sends an email alert when no new lines are added.
-#
-# LOGIC:
-#   Every CHECK_INTERVAL seconds:
-#     - Count lines in TARGET_FILE
-#     - If lines increased  → progress is happening, update counter, reset failures
-#     - If lines unchanged  → no progress, send alert email (max SEND_MAX_TIMES times)
-#     - If threshold reached → scraping is done, exit cleanly
-#
-# USAGE:
-#   chmod +x watchdog.sh
-#   ./watchdog.sh
-#   ./watchdog.sh &   ← run in background while scraper runs
-# =============================================================================
-
 TARGET_FILE="/mnt/c/Users/omar1/Documents/Projects/genAi/gemini_scraper/datasets/questions_1526_3050.json"
 
 # Stop the watchdog once the file reaches this many lines (scraping is done).
