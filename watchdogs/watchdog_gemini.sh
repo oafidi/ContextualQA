@@ -3,7 +3,7 @@
 TARGET_FILE="/mnt/c/Users/omar1/Documents/Projects/genAi/gemini_scraper/datasets/questions_1526_3050.json"
 
 # Stop the watchdog once the file reaches this many lines (scraping is done).
-LINE_THRESHOLD=9150
+LINE_THRESHOLD=10600
 
 # How often to check the file, in seconds.
 CHECK_INTERVAL=180

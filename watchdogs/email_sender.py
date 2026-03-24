@@ -10,10 +10,10 @@ load_dotenv()
 msg = MIMEMultipart()
 msg["From"]    = os.getenv("SENDER")
 msg["To"]      = os.getenv("RECEIVER")
-msg["Subject"] = "Darija Scraper Alert — No question generated"
+msg["Subject"] = "Darija Scraper Alert — No question generated -- ASUS TUF"
 
 # Email body
-body = """Hello,
+body = """Hello Omar I'm from your laptop ASUS TUF A15,
 
 The Darija scraper has stopped generating questions.
 
