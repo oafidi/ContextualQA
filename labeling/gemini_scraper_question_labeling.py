@@ -69,8 +69,8 @@ GEMINI_URL = "https://gemini.google.com/app"
 
 # Row range to process from the CSV (0-based, END_INDEX is excluded).
 # Example: START_INDEX=1525, END_INDEX=3050 processes rows 1525 to 3049.
-START_INDEX = 1525 # 3050
-END_INDEX   = 3050 # 4575
+START_INDEX = 6100 # 3050
+END_INDEX   = 7625 # 4575
 
 # Path to the output JSON file where (context, question) pairs are saved.
 OUTPUT_FILE = Path(f"./datasets/processed/question_generated_by_gemini_scraper/questions_{START_INDEX + 1}_{END_INDEX}.json")

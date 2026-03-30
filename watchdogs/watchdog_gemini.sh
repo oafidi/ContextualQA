@@ -1,9 +1,9 @@
 #!/bin/bash
 
-TARGET_FILE="/mnt/c/Users/omar1/Documents/Projects/genAi/gemini_scraper/datasets/questions_1526_3050.json"
+TARGET_FILE="/mnt/c/Users/omar1/Documents/Projects/genAi/gemini_scraper/datasets/questions_4576_6100.json"
 
 # Stop the watchdog once the file reaches this many lines (scraping is done).
-LINE_THRESHOLD=10600
+LINE_THRESHOLD=1950
 
 # How often to check the file, in seconds.
 CHECK_INTERVAL=180
@@ -67,7 +67,8 @@ while true; do
     # --- File has grown → scraper is making progress ---
     if [[ "$CURRENT_COUNT" -gt "$PREV_COUNT" ]]; then
         DIFF=$(( CURRENT_COUNT - PREV_COUNT ))
-        log "${GREEN}Change detected: ${PREV_COUNT} → ${CURRENT_COUNT} lines (+${DIFF})${NC}"
+        DIFF=$(( DIFF / 7))
+        log "${GREEN}Change detected: ${PREV_COUNT} → ${CURRENT_COUNT} lines (+${DIFF} entries)${NC}"
 
         # Update baseline for the next check.
         PREV_COUNT="$CURRENT_COUNT"
