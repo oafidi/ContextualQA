@@ -59,14 +59,14 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
 GEMINI_URL   = "https://gemini.google.com/app"
 
-START_INDEX  = 4575
-END_INDEX    = 6100
+START_INDEX  = 350
+END_INDEX    = 1500
 
 # After this many *successfully processed* (or attempted) contexts, the script
 # navigates to a fresh Gemini chat to reset the conversation history.
 CHAT_RESET_EVERY = 5
 
-OUTPUT_FILE  = Path(f"./datasets/qa_pairs_{START_INDEX + 1}_{END_INDEX}.json")
+OUTPUT_FILE  = Path(f"./datasets/qa_rest_part_1_{START_INDEX + 1}_{END_INDEX}.json")
 LOG_FILE     = Path("./logs/scraper_qa.log")
 
 logging.basicConfig(
@@ -428,7 +428,7 @@ def reset_chat(driver: webdriver.Chrome):
 
 def wait_for_response(driver: webdriver.Chrome, timeout: int = 90) -> str:
     """Wait until Gemini finishes generating and return the response text."""
-    human_pause(2, 4)
+    human_pause(15, 20)
     end_time = time.time() + timeout
 
     # Phase 1: wait for the "Stop generating" button to disappear
