@@ -15712,3 +15712,42 @@ Gemini a dit
 2026-05-30 21:44:48,716 [INFO] Answer   : نادية فتاح علوي
 2026-05-30 21:44:48,717 [INFO] Save successful (76 total entries)
 2026-05-30 21:44:48,717 [INFO] Waiting 12.7s before next request...
+2026-05-30 21:45:01,459 [INFO] [45] Row #44 already processed — skipping
+2026-05-30 21:45:01,460 [INFO] [46] Row #45 already processed — skipping
+2026-05-30 21:45:01,460 [INFO] [47] Row #46 already processed — skipping
+2026-05-30 21:45:01,460 [INFO] [48] Row #47 already processed — skipping
+2026-05-30 21:45:01,460 [INFO] [49] Row #48 already processed — skipping
+2026-05-30 21:45:01,460 [INFO] [50] Row #49 already processed — skipping
+2026-05-30 21:45:01,460 [INFO] [51] Row #50 already processed — skipping
+2026-05-30 21:45:01,460 [INFO] [52] Row #51 already processed — skipping
+2026-05-30 21:45:01,460 [INFO] [53] Row #52 already processed — skipping
+2026-05-30 21:45:01,461 [INFO] [54] Row #53 already processed — skipping
+2026-05-30 21:45:01,461 [INFO] [55] Row #54 already processed — skipping
+2026-05-30 21:45:01,461 [INFO] [56] Row #55 already processed — skipping
+2026-05-30 21:45:01,461 [INFO] [57] Row #56 already processed — skipping
+2026-05-30 21:45:01,461 [INFO] [58] Row #57 already processed — skipping
+2026-05-30 21:45:01,461 [INFO] [59] Row #58 already processed — skipping
+2026-05-30 21:45:01,461 [INFO] [60] Row #59 already processed — skipping
+2026-05-30 21:45:01,461 [INFO] [61] Row #60 already processed — skipping
+2026-05-30 21:45:01,461 [INFO] [62] Row #61 already processed — skipping
+2026-05-30 21:45:01,461 [INFO] [63] Row #62 already processed — skipping
+2026-05-30 21:45:01,462 [INFO] [64] Row #63 already processed — skipping
+2026-05-30 21:45:01,462 [INFO] [65] Row #64 already processed — skipping
+2026-05-30 21:45:01,462 [INFO] [66] Row #65 already processed — skipping
+2026-05-30 21:45:01,462 [INFO] [67] Row #66 already processed — skipping
+2026-05-30 21:45:01,462 [INFO] [68] Row #67 already processed — skipping
+2026-05-30 21:45:01,462 [INFO] [69] Row #68 already processed — skipping
+2026-05-30 21:45:01,462 [INFO] [70] Row #69 already processed — skipping
+2026-05-30 21:45:01,462 [INFO] [71] Row #70 already processed — skipping
+2026-05-30 21:45:01,462 [INFO] [72] Row #71 already processed — skipping
+2026-05-30 21:45:01,462 [INFO] [73] Row #72 already processed — skipping
+2026-05-30 21:45:01,463 [INFO] [74] Row #73 already processed — skipping
+2026-05-30 21:45:01,463 [INFO] [75] Row #74 already processed — skipping
+2026-05-30 21:45:01,463 [INFO] [76] Processing row #75 (chat turn 3/5)...
+2026-05-30 21:45:05,159 [INFO] Prompt submitted — waiting for response...
+2026-05-30 21:45:23,480 [INFO] Question : فين تقرر يتسجن بارون المخدرات موسى فلكون؟
+2026-05-30 21:45:23,488 [INFO] Answer   : السجن المحلي
+2026-05-30 21:45:23,488 [INFO] Save successful (77 total entries)
+2026-05-30 21:45:23,488 [INFO] Waiting 11.9s before next request...
+2026-05-30 21:45:35,419 [INFO] [77] Processing row #76 (chat turn 4/5)...
+2026-05-30 21:45:39,532 [INFO] Prompt submitted — waiting for response...

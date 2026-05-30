@@ -59,14 +59,14 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
 GEMINI_URL   = "https://gemini.google.com/app"
 
-START_INDEX  = 0
+START_INDEX  = 1000
 END_INDEX    = 2082
 
 # After this many *successfully processed* (or attempted) contexts, the script
 # navigates to a fresh Gemini chat to reset the conversation history.
 CHAT_RESET_EVERY = 5
 
-OUTPUT_FILE  = Path(f"./final/qa_rest_{START_INDEX + 1}_{END_INDEX}.json")
+OUTPUT_FILE  = Path(f"./final/qa_rest_{START_INDEX + 1}_{END_INDEX}_part2.json")
 LOG_FILE     = Path("./logs/scraper_qa.log")
 
 logging.basicConfig(
